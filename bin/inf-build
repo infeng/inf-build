@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var chalk = require('chalk');
+
+program
+.option('--config <path>', 'custom webpack config path, default is webpack.config.js')
+.parse(process.argv);
+
+program.cwd = process.cwd();
+
+require('../lib/build').default(program, function(err) {
+  if (err) {
+    chalk.red(err);
+    process.exit(1);
+  }
+  process.exit(0);
+});
