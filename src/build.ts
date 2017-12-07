@@ -1,7 +1,7 @@
 import { join, resolve } from 'path';
 import { existsSync } from 'fs';
 import * as webpack from 'webpack';
-import * as chalk from 'chalk';
+import chalk from 'chalk';
 import getFullWebpackConfig from './getFullWebpackConfig';
 import getLoaderOptions from './getLoaderOptions';
 import getWebpackCommonConfig from './getWebpackCommonConfig';
@@ -52,7 +52,6 @@ export default function build(args, cb) {
       }
     })
   );
-
   const compiler = webpack(webpackConfig);
   compiler.run((err, stats) => {
     if (err || stats.hasErrors()) {
