@@ -18,9 +18,9 @@
     "bin",
     "lib"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["webpack"],
+  "author": "infeng",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/infeng/inf-build/issues"
   },
