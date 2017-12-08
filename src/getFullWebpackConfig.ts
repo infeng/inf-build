@@ -112,7 +112,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
           },
         },
       ],
-    }
+    },
   ];
   if (production) {
     cssRules = cssRules.map(rule => {
@@ -127,6 +127,6 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
   }
 
   webpackConfig.module.rules = webpackConfig.module.rules.concat(cssRules);
-    
+
   return webpackConfig;
 }
