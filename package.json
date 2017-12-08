@@ -18,7 +18,9 @@
     "bin",
     "lib"
   ],
-  "keywords": ["webpack"],
+  "keywords": [
+    "webpack"
+  ],
   "author": "infeng",
   "license": "MIT",
   "bugs": {
