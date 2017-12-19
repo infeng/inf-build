@@ -1,1 +1,3 @@
-export { default as webpack }  from 'webpack';
+import * as webpack from 'webpack';
+
+module.exports = webpack;

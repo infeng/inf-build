@@ -4,7 +4,8 @@
     "target": "es5",
     "rootDir": "./src",
     "outDir": "./lib",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "node_modules"
