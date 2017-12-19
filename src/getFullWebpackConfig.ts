@@ -38,6 +38,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
         return /\.css$/.test(filePath) && !/\.module\.css$/.test(filePath);
       },
       use: [
+        'style-loader',
         {
           loader: 'css-loader',
           options: {
@@ -53,6 +54,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
     {
       test: /\.module\.css$/,
       use: [
+        'style-loader',
         {
           loader: 'css-loader',
           options: {
@@ -72,6 +74,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
         return /\.less$/.test(filePath) && !/\.module\.less$/.test(filePath);
       },
       use: [
+        'style-loader',
         {
           loader: 'css-loader',
           options: {
@@ -93,6 +96,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
     {
       test: /\.module\.less$/,
       use: [
+        'style-loader',
         {
           loader: 'css-loader',
           options: {
@@ -120,7 +124,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
         test: rule.test,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: rule.use,
+          use: rule.use.slice(1),
         }),
       };
     });
