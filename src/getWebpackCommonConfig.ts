@@ -111,6 +111,7 @@ export function getWebpackCommonConfig(): any {
         compress: {
           warnings: false,
         },
+        sourceMap: true,
       }),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
