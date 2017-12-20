@@ -25,7 +25,7 @@ export function getWebpackCommonConfig(): any {
       modules: ['node_modules', path.join(__dirname, '../node_modules')],
       extensions: ['.ts', 'tsx', '.js', '.jsx', '.json'],
     },
-    devtool: production ? 'source-map' : 'cheap-eval-source-map',
+    devtool: production ? 'source-map' : 'eval-source-map',
     module: {
       rules: [
         {
