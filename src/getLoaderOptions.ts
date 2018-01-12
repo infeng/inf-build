@@ -2,6 +2,10 @@ import { tmpdir } from 'os';
 import * as rucksack from 'rucksack-css';
 import * as autoprefixer from 'autoprefixer';
 
+const production = process.env.NODE_ENV === 'production';
+
+const hasSourcemap = !production;
+
 export default function getLoaderOptions() {
   return {
     babel: getBabelOptions(),
@@ -27,7 +31,7 @@ function getBabelOptions() {
 
 function getPostcssOptions() {
   return {
-    sourceMap: true,
+    sourceMap: hasSourcemap,
     plugins: [
       rucksack(),
       autoprefixer({

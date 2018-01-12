@@ -4,6 +4,8 @@ import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 export default function getFullWebpackConfig(webpackConfig, loaderOptions: LoaderOptions) {
   const production = process.env.NODE_ENV === 'production';
 
+  const hasSourcemap = !production;
+
   webpackConfig.module.rules.push(
     {
       test: /\.jsx?$/,
@@ -42,7 +44,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
         {
           loader: 'css-loader',
           options: {
-            sourceMap: true,
+            sourceMap: hasSourcemap,
           },
         },
         {
@@ -58,7 +60,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
         {
           loader: 'css-loader',
           options: {
-            sourceMap: true,
+            sourceMap: hasSourcemap,
             modules: true,
             localIdentName: '[local]___[hash:base64:5]',
           },
@@ -78,7 +80,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
         {
           loader: 'css-loader',
           options: {
-            sourceMap: true,
+            sourceMap: hasSourcemap,
           },
         },
         {
@@ -88,7 +90,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
         {
           loader: 'less-loader',
           options: {
-            sourceMap: true,
+            sourceMap: hasSourcemap,
           },
         },
       ],
@@ -100,7 +102,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
         {
           loader: 'css-loader',
           options: {
-            sourceMap: true,
+            sourceMap: hasSourcemap,
             modules: true,
             localIdentName: '[local]___[hash:base64:5]',
           },
@@ -112,7 +114,7 @@ export default function getFullWebpackConfig(webpackConfig, loaderOptions: Loade
         {
           loader: 'less-loader',
           options: {
-            sourceMap: true,
+            sourceMap: hasSourcemap,
           },
         },
       ],
